@@ -5,3 +5,6 @@
 header{
     text-align: center;
 }
+li {
+    list-style: none;
+}
