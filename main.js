@@ -12,10 +12,17 @@ bSave.addEventListener("click", function(event){
     
     var liNota = document.createElement("li");
     liNota.classList.add("nota");
-
     liNota.textContent = nota.value;
-
     document.body.appendChild(liNota);
 
+    var bEdit = document.createElement("button");
+    bEdit.classList.add("btn");
+    bEdit.textContent = "Edit";
+    document.body.appendChild(bEdit);
+
+    var bDel = document.createElement("button");
+    bDel.classList.add("btn");
+    bDel.textContent = "Delete";
+    document.body.appendChild(bDel);
 });
 
