@@ -16,12 +16,12 @@ bSave.addEventListener("click", function(event){
     document.body.appendChild(liNota);
 
     var bEdit = document.createElement("button");
-    bEdit.classList.add("btn");
+    bEdit.classList.add("btnEdit");
     bEdit.textContent = "Edit";
     document.body.appendChild(bEdit);
 
     var bDel = document.createElement("button");
-    bDel.classList.add("btn");
+    bDel.classList.add("btnDel");
     bDel.textContent = "Delete";
     document.body.appendChild(bDel);
 });
