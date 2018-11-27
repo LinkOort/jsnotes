@@ -7,4 +7,8 @@ header{
 }
 li {
     list-style: none;
+    width: 180px;
+    height: 180px;
+    background: #666;
+    cursor: pointer;
 }
