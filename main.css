@@ -11,4 +11,10 @@ li {
     height: 180px;
     background: #666;
     cursor: pointer;
+    box-shadow: 5px 10px #888888;
+    border-radius: 5px;
+    margin: 25px;
+}
+li:hover{
+    border:1px solid lightcyan;
 }
