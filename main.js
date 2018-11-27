@@ -8,6 +8,14 @@ bSave.addEventListener("click", function(event){
     console.log(nota.value);
     localStorage.setItem("nota", nota.value);
     ind = localStorage.length + 1;
-	localStorage.setItem("nota" + ind, nota.value);
+    localStorage.setItem("nota" + ind, nota.value);
+    
+    var liNota = document.createElement("li");
+    liNota.classList.add("nota");
+
+    liNota.textContent = nota.value;
+
+    document.body.appendChild(liNota);
+
 });
 
