@@ -5,13 +5,26 @@
 header{
     text-align: center;
 }
+.btnSave, .btnEdit, .btnDel{
+    background-color: #777;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+}
+.btnEdit, .btnDel{
+    font-size: 16px;
+    margin: 10px 25px;
+}
 li {
     list-style: none;
     width: 180px;
     height: 180px;
     background: #666;
     cursor: pointer;
-    box-shadow: 5px 10px #888888;
+    box-shadow: 5px 10px 3px #888888;
     border-radius: 5px;
     margin: 25px;
 }
