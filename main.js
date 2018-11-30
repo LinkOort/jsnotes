@@ -14,15 +14,20 @@ bSave.addEventListener("click", function(event){
     liNota.classList.add("nota");
     liNota.textContent = nota.value;
     document.body.appendChild(liNota);
+    document.getElementById("principal").appendChild(liNota);
 
     var bEdit = document.createElement("button");
     bEdit.classList.add("btnEdit");
     bEdit.textContent = "Edit";
     document.body.appendChild(bEdit);
+    document.getElementById("principal").appendChild(bEdit);
 
     var bDel = document.createElement("button");
     bDel.classList.add("btnDel");
     bDel.textContent = "Delete";
-    document.body.appendChild(bDel);
+    document.body.appendChild(bDel);   
+    document.getElementById("principal").appendChild(bDel);
+    
 });
+
 
