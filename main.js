@@ -1,6 +1,6 @@
 //local reservado para variáveis globais
 var ind
-
+var ano
 
 var bSave = document.querySelector(".btnSave"); // . é para classe, # é para ID
 bSave.addEventListener("click", function(event){
@@ -10,24 +10,37 @@ bSave.addEventListener("click", function(event){
     ind = localStorage.length + 1;
     localStorage.setItem("nota" + ind, nota.value);
     
-    var liNota = document.createElement("li");
+    var liNota = document.createElement("p");
+    liNota.setAttribute("id", "anotacao");
     liNota.classList.add("nota");
     liNota.textContent = nota.value;
     document.body.appendChild(liNota);
     document.getElementById("principal").appendChild(liNota);
 
     var bEdit = document.createElement("button");
+    bEdit.addEventListener("click", edtNote);
     bEdit.classList.add("btnEdit");
     bEdit.textContent = "Edit";
     document.body.appendChild(bEdit);
-    document.getElementById("principal").appendChild(bEdit);
+    liNota.appendChild(bEdit);
 
     var bDel = document.createElement("button");
+    bDel.addEventListener("click", delNote);
     bDel.classList.add("btnDel");
     bDel.textContent = "Delete";
-    document.body.appendChild(bDel);   
-    document.getElementById("principal").appendChild(bDel);
-    
+    document.body.appendChild(bDel);  
+    liNota.appendChild(bDel);   
 });
+
+function delNote(event){
+    var note = document.getElementById("anotacao");
+    note.remove(note.selectedIndex);
+    localStorage.removeItem("nota" + ind)
+
+}
+
+function edtNote(event){
+    var content  = document.querySelector(".nota").textContent;
+}
 
 
