@@ -20,6 +20,7 @@ header{
     cursor: pointer;
     width: 75px;
     height: 40px;
+    font-size: 12px;
 }
 .btnSave:hover, .btnEdit:hover, .btnDel:hover{
     background-color: #888888;
@@ -28,7 +29,6 @@ header{
 }
 .btnEdit, .btnDel{
     display: block;
-    font-size: 16px;
     margin: 10px 25px;
 }
 ul{
