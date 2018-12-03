@@ -1,6 +1,5 @@
 //local reservado para variáveis globais
 var ind
-var ano
 
 var bSave = document.querySelector(".btnSave"); // . é para classe, # é para ID
 bSave.addEventListener("click", function(event){
@@ -29,7 +28,10 @@ bSave.addEventListener("click", function(event){
     bDel.classList.add("btnDel");
     bDel.textContent = "Delete";
     document.body.appendChild(bDel);  
-    liNota.appendChild(bDel);   
+    liNota.appendChild(bDel);
+    
+    var setColor = document.getElementById("color");
+    setColor.addEventListener("click", changeBackground);
 });
 
 function delNote(event){
@@ -41,6 +43,12 @@ function delNote(event){
 
 function edtNote(event){
     var content  = document.querySelector(".nota").textContent;
+}
+
+function changeBackground(){
+    var color = document.getElementById("color").value;
+    document.bgColor = color;
+    document.getElementById("anotacao").style.backgroundColor = color;
 }
 
 
