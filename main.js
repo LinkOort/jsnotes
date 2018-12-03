@@ -1,7 +1,6 @@
 //local reservado para variáveis globais
 var ind
 
-
 var bSave = document.querySelector(".btnSave"); // . é para classe, # é para ID
 bSave.addEventListener("click", function(event){
 	event.preventDefault();
@@ -16,9 +15,8 @@ bSave.addEventListener("click", function(event){
     liNota.textContent = nota.value;
     document.body.appendChild(liNota);
     document.getElementById("principal").appendChild(liNota);
-   	 
    	 	var addId = document.getElementsByClassName("note"); 
- 		for (var i = 0; i < addId.length; i++) 
+ 		for (var i = 0; i < addId.length; i++) //modifica a ordem dos IDs numericamente
  		addId[i].id = "anotacao" + (i + 1);
 
     var bEdit = document.createElement("button");
@@ -40,11 +38,10 @@ bSave.addEventListener("click", function(event){
     setColor.addEventListener("click", event);
     var color = document.getElementById("color").value;
     document.bgColor = color; 	
-    var addId = document.getElementsByClassName("note"); 
- 	for (var i = 0; i < addId.length; i++) //não coloque nada nesta linha
- 	addId[i].id = "anotacao" + (i + 1);
+    	var addId = document.getElementsByClassName("note"); 
+ 		for (var i = 0; i < addId.length; i++) //não coloque nada nesta linha
+ 		addId[i].id = "anotacao" + (i + 1);
     document.getElementById("anotacao" + i).style.backgroundColor = color;
-	
 });
     
 var bdelAll = document.querySelector(".delAll");
@@ -61,7 +58,7 @@ function delNote(event){
     note = document.getElementById("anotacao" + i);
     note.remove();
     localStorage.removeItem("nota" + 1);
-}
+};
 function edtNote(event){
     var content  = document.querySelector(".nota").textContent;
-}
+};
