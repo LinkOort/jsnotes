@@ -27,7 +27,7 @@ header{
     color: black;
 }
 .btnEdit, .btnDel{
-    
+    display: block;
     font-size: 16px;
     margin: 10px 25px;
 }
@@ -39,7 +39,6 @@ p {
     list-style: none;
     width: 250px;
     height: 250px;
-
     cursor: pointer;
     box-shadow: 5px 10px #cecece;
     border-radius: 5px;

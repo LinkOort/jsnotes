@@ -1,6 +1,7 @@
 //local reservado para variáveis globais
 var ind
 
+
 var bSave = document.querySelector(".btnSave"); // . é para classe, # é para ID
 bSave.addEventListener("click", function(event){
 	event.preventDefault();
@@ -11,7 +12,7 @@ bSave.addEventListener("click", function(event){
     
     var liNota = document.createElement("p");
     liNota.setAttribute("id", "anotacao");
-    liNota.classList.add("nota");
+    liNota.classList.add("note");
     liNota.textContent = nota.value;
     document.body.appendChild(liNota);
     document.getElementById("principal").appendChild(liNota);
@@ -33,12 +34,11 @@ bSave.addEventListener("click", function(event){
     var setColor = document.getElementById("color");
     setColor.addEventListener("click", changeBackground);
 });
-
-function delNote(event){
-    var note = document.getElementById("anotacao");
-    note.remove(note.selectedIndex);
-    localStorage.removeItem("nota" + ind)
-
+    
+function delNote(event){    
+    var note = document.getElementById("anotacao")
+    console.log(anotacao.length)
+    note.remove();
 }
 
 function edtNote(event){
@@ -51,4 +51,6 @@ function changeBackground(){
     document.getElementById("anotacao").style.backgroundColor = color;
 }
 
-
+// var addId = document.getElementsByClassName("note"); soma os IDs
+// for (var i = 0; i < addId.length; i++) {
+// addId[i].id = "anotacao" + (i + 1);
