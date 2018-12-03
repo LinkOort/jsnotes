@@ -35,10 +35,25 @@ bSave.addEventListener("click", function(event){
     document.body.appendChild(bDel);  
     liNota.appendChild(bDel);
     
+    //definição das cores 
     var setColor = document.getElementById("color");
-    setColor.addEventListener("click", changeBackground);
+    setColor.addEventListener("click", event);
+    var color = document.getElementById("color").value;
+    document.bgColor = color; 	
+    var addId = document.getElementsByClassName("note"); 
+ 	for (var i = 0; i < addId.length; i++) //não coloque nada nesta linha
+ 	addId[i].id = "anotacao" + (i + 1);
+    document.getElementById("anotacao" + i).style.backgroundColor = color;
+	
 });
     
+var bdelAll = document.querySelector(".delAll");
+bdelAll.addEventListener("click", function(event){
+	event.preventDefault();
+	console.log("kk");
+	//montar a estrutura do apagar tudo
+});
+
 function delNote(event){    
     var rmId = document.getElementsByClassName("note"); 
  		for (var i = 0; i < rmId.length; i++) //Remove
@@ -47,18 +62,6 @@ function delNote(event){
     note.remove();
     localStorage.removeItem("nota" + 1);
 }
-
 function edtNote(event){
     var content  = document.querySelector(".nota").textContent;
 }
-
-function changeBackground(){
-    var color = document.getElementById("color").value;
-    document.bgColor = color; 	
-    	var addId = document.getElementsByClassName("note"); 
- 		for (var i = 0; i < addId.length; i++) 
- 		addId[i].id = "anotacao" + (i + 1);
-    document.getElementById("anotacao" + i).style.backgroundColor = color;
-}
-
- 
