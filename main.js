@@ -16,6 +16,10 @@ bSave.addEventListener("click", function(event){
     liNota.textContent = nota.value;
     document.body.appendChild(liNota);
     document.getElementById("principal").appendChild(liNota);
+   	 
+   	 	var addId = document.getElementsByClassName("note"); 
+ 		for (var i = 0; i < addId.length; i++) 
+ 		addId[i].id = "anotacao" + (i + 1);
 
     var bEdit = document.createElement("button");
     bEdit.addEventListener("click", edtNote);
@@ -36,9 +40,12 @@ bSave.addEventListener("click", function(event){
 });
     
 function delNote(event){    
-    var note = document.getElementById("anotacao")
-    console.log(anotacao.length)
+    var rmId = document.getElementsByClassName("note"); 
+ 		for (var i = 0; i < rmId.length; i++) //Remove
+ 		rmId[i].id = "anotacao" + (i + 1);
+    note = document.getElementById("anotacao" + i);
     note.remove();
+    localStorage.removeItem("nota" + 1);
 }
 
 function edtNote(event){
@@ -47,10 +54,11 @@ function edtNote(event){
 
 function changeBackground(){
     var color = document.getElementById("color").value;
-    document.bgColor = color;
-    document.getElementById("anotacao").style.backgroundColor = color;
+    document.bgColor = color; 	
+    	var addId = document.getElementsByClassName("note"); 
+ 		for (var i = 0; i < addId.length; i++) 
+ 		addId[i].id = "anotacao" + (i + 1);
+    document.getElementById("anotacao" + i).style.backgroundColor = color;
 }
 
-// var addId = document.getElementsByClassName("note"); soma os IDs
-// for (var i = 0; i < addId.length; i++) {
-// addId[i].id = "anotacao" + (i + 1);
+ 
