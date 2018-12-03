@@ -10,7 +10,7 @@ header{
     color: black;
     padding: 25px;
 }
-.btnSave, .btnEdit, .btnDel{
+.btnSave, .btnEdit, .btnDel, .delAll{
     background-color: #777;
     border: none;
     color: white;
@@ -22,7 +22,7 @@ header{
     height: 40px;
     font-size: 12px;
 }
-.btnSave:hover, .btnEdit:hover, .btnDel:hover{
+.btnSave:hover, .btnEdit:hover, .btnDel:hover, .delAll:hover{
     background-color: #888888;
     transition-duration: 0.4s;
     color: black;
