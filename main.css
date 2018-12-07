@@ -10,7 +10,7 @@ header{
     color: black;
     padding: 25px;
 }
-.btnSave, .btnEdit, .btnDel, .delAll{
+.btnSave, .btnEdit, .btnDel{
     background-color: #777;
     border: none;
     color: white;
@@ -28,9 +28,16 @@ header{
     color: black;
 }
 .btnEdit, .btnDel{
-    display: block;
-    margin: 10px 25px;
+    position: relative;
 }
+.btnEdit{
+    top: 200px;
+    left: 65px;
+}
+.btnDel{
+    top: 140px;
+}
+
 ul{
     padding: 48px;
 }
@@ -52,4 +59,8 @@ p:hover{
 }
 p {
     display: inline-flex;
+}
+textarea{
+    position: relative;
+    background: none;
 }

@@ -1,5 +1,5 @@
 //local reservado para variáveis globais
-var ind
+var ind 
 
 var bSave = document.querySelector(".btnSave"); // . é para classe, # é para ID
 bSave.addEventListener("click", function(event){
@@ -12,12 +12,17 @@ bSave.addEventListener("click", function(event){
     var liNota = document.createElement("p");
     liNota.setAttribute("id", "anotacao");
     liNota.classList.add("note");
-    liNota.textContent = nota.value;
     document.body.appendChild(liNota);
     document.getElementById("principal").appendChild(liNota);
    	 	var addId = document.getElementsByClassName("note"); 
  		for (var i = 0; i < addId.length; i++) //modifica a ordem dos IDs numericamente
- 		addId[i].id = "anotacao" + (i + 1);
+         addId[i].id = "anotacao" + (i + 1);
+         
+    var txt = document.createElement("textarea");
+    txt.classList.add("txtarea");
+    txt.textContent = nota.value;
+    document.body.appendChild(txt);
+    liNota.appendChild(txt);
 
     var bEdit = document.createElement("button");
     bEdit.addEventListener("click", edtNote);
@@ -43,22 +48,18 @@ bSave.addEventListener("click", function(event){
  		addId[i].id = "anotacao" + (i + 1);
     document.getElementById("anotacao" + i).style.backgroundColor = color;
 });
-    
-var bdelAll = document.querySelector(".delAll");
-bdelAll.addEventListener("click", function(event){
-	event.preventDefault();
-	console.log("kk");
-	//montar a estrutura do apagar tudo
-});
 
-function delNote(event){    
+function delNote(del){    
     var rmId = document.getElementsByClassName("note"); 
  		for (var i = 0; i < rmId.length; i++) //Remove
  		rmId[i].id = "anotacao" + (i + 1);
     note = document.getElementById("anotacao" + i);
-    note.remove();
-    localStorage.removeItem("nota" + 1);
+    note.remove(del.target.note);
+    console.log(del.target.note);
+    
 };
-function edtNote(event){
-    var content  = document.querySelector(".nota").textContent;
+function edtNote(edt){
+    var content  = document.querySelector(".note").textContent;
+    nota.value = content;
+    
 };
