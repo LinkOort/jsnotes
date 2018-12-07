@@ -62,4 +62,9 @@ function edtNote(edt){
     var content  = document.querySelector(".note").textContent;
     nota.value = content;
     
+    var btCheck = document.createElement("button");
+    document.body.appendChild(btCheck);
+    btCheck.classList.add("btnCheck");
+    btCheck.textContent = "Save Edit";
+    document.getElementById("noteType").appendChild(btCheck);
 };

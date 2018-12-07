@@ -10,7 +10,7 @@ header{
     color: black;
     padding: 25px;
 }
-.btnSave, .btnEdit, .btnDel{
+.btnSave, .btnEdit, .btnDel, .btnCheck{
     background-color: #777;
     border: none;
     color: white;
@@ -37,7 +37,10 @@ header{
 .btnDel{
     top: 140px;
 }
-
+.btnCheck{
+	position: relative;
+	top: -3px;
+}
 ul{
     padding: 48px;
 }
