@@ -14,9 +14,7 @@ bSave.addEventListener("click", function(event){
     liNota.classList.add("note");
     document.body.appendChild(liNota);
     document.getElementById("principal").appendChild(liNota);
-   	 	var addId = document.getElementsByClassName("note"); 
- 		for (var i = 0; i < addId.length; i++) //modifica a ordem dos IDs numericamente
-         addId[i].id = "anotacao" + (i + 1);
+
          
     var txt = document.createElement("textarea");
     txt.classList.add("txtarea");
@@ -27,6 +25,9 @@ bSave.addEventListener("click", function(event){
     var bEdit = document.createElement("button");
     bEdit.addEventListener("click", edtNote);
     bEdit.classList.add("btnEdit");
+    	var addId = document.getElementsByClassName("btnEdit"); 
+ 		for (var i = 0; i < addId.length; i++) 
+        addId[i].id = "btnEdit" + (i + 1);
     bEdit.textContent = "Edit";
     document.body.appendChild(bEdit);
     liNota.appendChild(bEdit);
@@ -54,12 +55,11 @@ function delNote(del){
  		for (var i = 0; i < rmId.length; i++) //Remove
  		rmId[i].id = "anotacao" + (i + 1);
     note = document.getElementById("anotacao" + i);
-    note.remove(del.target.note);
-    console.log(del.target.note);
-    
+    note.remove();
+    localStorage.removeItem();
 };
 function edtNote(edt){
-    var content  = document.querySelector(".note").textContent;
+    var content  = document.querySelector(".txtarea").textContent;
     nota.value = content;
     
     var btCheck = document.createElement("button");
@@ -67,4 +67,20 @@ function edtNote(edt){
     btCheck.classList.add("btnCheck");
     btCheck.textContent = "Save Edit";
     document.getElementById("noteType").appendChild(btCheck);
+    btCheck.addEventListener("click", btnCheck);
+    bSave.classList.add("invisible");
+
+
+};
+
+function btnCheck(check){
+	event.preventDefault();
+	bSave.classList.add("visible");
+	setEdit.textContent = nota.value;
+	document.body.appendChild(setEdit);
+	
+
+
+	var getCheck = document.getElementsByClassName("btnCheck");
+	getCheck.remove();
 };

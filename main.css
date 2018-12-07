@@ -67,3 +67,9 @@ textarea{
     position: relative;
     background: none;
 }
+.invisible{
+	display: none;
+}
+.visible{
+	display: initial;
+}
