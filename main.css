@@ -10,6 +10,16 @@ header{
     color: black;
     padding: 25px;
 }
+#btnEdit, #btnDel{
+    position: absolute;
+}
+#btnEdit{
+    left: 150px;  
+}
+#btnDel{
+    top: 200px;
+    left: 25px;
+}
 .btnSave, .btnEdit, .btnDel, .btnCheck{
     background-color: #777;
     border: none;
@@ -45,6 +55,7 @@ ul{
     padding: 48px;
 }
 p {
+    position: relative;
     text-align: center;
     list-style: none;
     width: 250px;
@@ -53,8 +64,7 @@ p {
     box-shadow: 5px 10px #cecece;
     border-radius: 5px;
     margin: 25px;
-    overflow: auto;
-    word-wrap: break-word;
+    word-break: break-all;
 }
 p:hover{
     border:1px solid #888888;

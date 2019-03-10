@@ -1,8 +1,8 @@
 var ind 
 
-var bSave = document.querySelector(".btnSave"); // . é para classe, # é para ID
-bSave.addEventListener("click", function(event){
-	event.preventDefault();
+var bSave = document.querySelector(".btnSave"); 
+bSave.addEventListener("click", function(e){
+	e.preventDefault();
     localStorage.setItem("nota", nota.value);
     ind = localStorage.length + 1;
     localStorage.setItem("nota" + ind, nota.value);
@@ -11,20 +11,14 @@ bSave.addEventListener("click", function(event){
     liNota.setAttribute("id", "anotacao");
     liNota.classList.add("note");
     document.body.appendChild(liNota);
+    liNota.textContent = nota.value;
     document.getElementById("principal").appendChild(liNota);
         
-    var txt = document.createElement("textarea");
-    txt.classList.add("txtarea");
-    txt.textContent = nota.value;
-    document.body.appendChild(txt);
-    liNota.appendChild(txt);
 
     var bEdit = document.createElement("button");
     bEdit.addEventListener("click", edtNote);
     bEdit.classList.add("btnEdit");
-    	var addId = document.getElementsByClassName("btnEdit"); 
- 		for (var i = 0; i < addId.length; i++) 
-        addId[i].id = "btnEdit" + (i ++);
+    bEdit.setAttribute("id", "btnEdit");
     bEdit.textContent = "Edit";
     document.body.appendChild(bEdit);
     liNota.appendChild(bEdit);
@@ -32,9 +26,7 @@ bSave.addEventListener("click", function(event){
     var bDel = document.createElement("button");
     bDel.addEventListener("click", delNote);
     bDel.classList.add("btnDel");
-    	var addId = document.getElementsByClassName("btnDel"); 
- 		for (var i = 0; i < addId.length; i++) 
-        addId[i].id = "btnDel" + (i ++);    
+    bDel.setAttribute("id", "btnDel");
     bDel.textContent = "Delete";
     document.body.appendChild(bDel);  
     liNota.appendChild(bDel);
